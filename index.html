@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Browser Width and Height</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        #dimensions {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        #dimensions2 {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        
+        #warning {
+            font-size: 18px;
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+     
+       
+
+        function showDimensions() {
+            const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            
+            const dimensionsDiv = document.getElementById('dimensions');
+            dimensionsDiv.textContent = `Width: ${width}px, Height: ${height}px`;
+
+            
+        }
+
+        function showDimensions2() {
+            const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            
+            const dimensionsDiv = document.getElementById('dimensions2');
+            dimensionsDiv.textContent = `Width: ${width/16}rem, Height: ${height/16}rem`;
+
+            
+        }
+
+        function showDimensions3() {
+            const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            
+            const dimensionsDiv = document.getElementById('dimensions3');
+            dimensionsDiv.textContent = `Width: ${width/16}rem, Height: ${height/16}rem`;
+
+            
+        }
+        // Percentage = (pixel / text-size)*100%
+
+
+        
+        window.addEventListener('DOMContentLoaded', showDimensions);
+        window.addEventListener('DOMContentLoaded', showDimensions2);
+        window.addEventListener('resize', showDimensions);
+        window.addEventListener('resize', showDimensions2);
+
+
+             
+    
+
+    </script>
+</head>
+<body>
+    <h1>Browser Width and Height</h1>
+    <div id="dimensions"></div>
+    <div id="dimensions2"></div>
+    <div id="dimensions3"></div>
+    <div id="warning"></div>
+</body>
+</html>
